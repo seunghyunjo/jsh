@@ -3,7 +3,7 @@
 import (
    
     "net/http"
-    "text/template"
+    "html/template"
 
 )
  
@@ -11,7 +11,7 @@ import (
  
 func mainPage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/htm")
-  	mainTemplate:=template.Must(template.ParseFiles("topics.html"))
+  	mainTemplate:=template.Must(template.ParseFiles("index.htm"))
 	mainTemplate.Execute(w, nil)
 }
 

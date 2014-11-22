@@ -1,0 +1,21 @@
+﻿<html>
+  <head>
+    <title>Go Chat</title>
+  </head>
+  <body>
+   <font  color="#543C28"><h1> Let's Talk! </h1>
+      <form action="/sign" method="post">
+               <div><textarea name="content" rows="1" cols="60"></textarea><input type="submit" value="Send"></div>
+          </form>
+       {{range .}}
+            {{with .Author}}
+                 <p><b>{{.}}</b> wrote:</p>
+            {{else}}
+                 <p>An anonymous person wrote:</p>
+            {{end}}
+         <pre>{{.Content}}</pre>
+      <hr size="1" noshade> 
+       {{end}}
+       </font>
+     </body>
+</html>
